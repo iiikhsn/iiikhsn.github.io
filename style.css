@@ -403,9 +403,7 @@ nav ul a:focus-visible {
 }
 
 
-/* =========================================
-   CONTENT
-========================================= */
+/* =========== CONTENT ================ */
 
 .portfolio-content {
   display: none;
@@ -434,9 +432,7 @@ nav ul a:focus-visible {
 }
 
 
-/* =========================================
-   PROJECT HORIZONTAL SCROLL
-========================================= */
+/* ============= PROJECT HORIZONTAL SCROLL ================ */
 
 .portfolio-scroll {
   display: flex;
@@ -530,9 +526,7 @@ nav ul a:focus-visible {
 }
 
 
-/* =========================================
-   CERTIFICATES
-========================================= */
+/* ======= CERTIFICATES ============== */
 
 .certificate-scroll {
   display: flex;
@@ -597,6 +591,42 @@ nav ul a:focus-visible {
 
 .certificate-item a:hover {
   text-decoration: underline;
+}
+
+
+/* ==== CERTIFICATE MODAL=====*/
+
+.certificate-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(3, 5, 15, 0.86);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 1s ease;
+}
+
+.certificate-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.certificate-modal img {
+  max-width: min(60%, 1000px);
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+  transform: scale(0.96);
+  transition: transform 0.3s ease;
+}
+
+.certificate-modal.active img {
+  transform: scale(0.3s);
 }
 
 
