@@ -1,0 +1,260 @@
+#f1ecda
+
+animate__lightSpeedInLeft
+
+
+<!--html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerioto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>University Of Indonesia</h1>
+
+    <div class="container">
+        <ul class="galery">
+            <li>
+                <a href="#gambar-1">
+                    <img src="../image/uui.jpg" alt="Universitas Indonesia">
+                    <span>Universitas Indonesia</span>
+                </a>
+
+                <div class="overlay" id="gambar-1">
+                    <a href="#" class="close"> close</a>
+                    <a href="#gambar-4" class="prev">prev</a>
+                    <img src="../full/ui.jpg" alt="Universitas Indonesia">
+                    <a href="#gambar-2" class="next">next</a>
+                </div>
+            </li>
+
+
+            <li>
+                <a href="#gambar-2">
+                <img src="../image/itb.jpg" alt="Universitas Indonesia">
+                <span>Institute Teknologi bandung</span>
+                </a>
+                
+                 <div class="overlay" id="gambar-2">
+                    <a href="#" class="close"> close</a>
+                    <a href="#gambar-1" class="prev">prev</a>
+                    <img src="../full/itb.jpg" alt="Universitas Indonesia">
+                    <a href="#gambar-3" class="next">next</a>
+                </div>
+            </li>
+
+
+            <li>
+                <a href="#gambar-3">
+                <img src="../image/upm.jpg" alt="Universitas Indonesia">
+                <span>Universitas Pamulang</span>
+                </a>
+
+                 <div class="overlay" id="gambar-3">
+                    <a href="#" class="close"> close</a>
+                    <a href="#gambar-2" class="prev">prev</a>
+                    <img src="../full/unipam.jpg" alt="Universitas Indonesia">
+                    <a href="#gambar-4" class="next">next</a>
+                </div>
+            </li>
+
+
+            <li>
+                <a href="#gambar-4">
+                <img src="../image/itb.jpg" alt="Universitas Indonesia">
+                <span>Institute Teknologi bandung</span>
+                </a>
+
+                 <div class="overlay" id="gambar-4">
+                    <a href="#" class="close"> close</a>
+                    <a href="#gambar-3" class="prev">prev</a>
+                    <img src="../full/itb.jpg" alt="Universitas Indonesia">
+                    <a href="#gambar-1" class="next">next</a>
+                </div>
+            </li>
+            
+            <div class="clear"></div>
+        </ul>
+    </div> 
+</body>
+</html>
+
+<!--css-->
+
+
+
+
+
+body {
+    font: 18px/36px 'arial','sans-serif';
+    background-color: #617381;
+}
+
+h1 {
+    color: rgb(250, 222, 189);
+    font-size: 80px;
+    text-align: center;
+    margin: 50px 0;
+    text-shadow: 2px 3px 3px rgb(49, 38, 38);
+}
+.container {
+    width: 900px;
+    background-color: #1e9fdb;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+}
+
+.galery li {
+    width: 180px;
+    height: 169px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #f7fbd1;
+    float: left;
+    margin-right: 10px;
+    position: relative;
+}
+.clear {
+    clear: both;
+}
+
+
+.galery li span {
+    display: block;
+    width: 180px;
+    height: 169px;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    background-color: rgba(166, 163, 163, 0.5);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    line-height: 163px;
+    color: #333;
+    text-shadow: 1px 1px 1px #ddd;
+    opacity: 0;
+    transition: .3s;
+
+}
+
+.galery li a:hover span {
+    opacity: 1;
+    transform: scale(1) rotate(360deg);
+}
+
+.overlay {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    background-color: rgba(0,0,0,0);
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    transition: 1s;
+    text-align: center;
+    padding: 100px 0;
+}
+
+
+
+.overlay:target {
+    width: auto;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(105, 99, 113, 0.77);
+}
+.overlay img {
+    max-height: 100%;
+    box-shadow: 2px 2px 10px rgb(0,0,0,.5);
+}
+
+.overlay:target img {
+    animation: FadeAja 1s;
+}
+
+.overlay .close {
+    position: absolute;
+    top: 55px;
+    left: 55%;
+    color: aliceblue;
+    text-decoration: none;
+    background-color: black;
+    border: 1px solid rgb(239, 233, 221);
+    border-radius: 10px;
+    line-height: 14px;
+    padding: 5px;
+    opacity: 0;
+}
+.overlay:target .close {
+    animation: slideDownFade .5s .5s forwards;
+}
+
+.overlay:target .next, 
+.overlay:target .prev {
+    animation: FadeAja .5s .5s forwards;
+}
+
+.next, .prav {
+    width: 100px;
+    height: 100px;
+    background-image: url(../image/nxt.png);
+    position: absolute;
+    text-indent: -9999px;
+    top: 23%;
+    margin-left: -5px;
+    opacity: 0;
+}
+.prev {
+    width: 100px;
+    height: 100px;
+    background-image: url(../image/prev2.png);
+    position: absolute;
+    text-indent: -9999px;
+    top: 23%;
+    margin-left: -95px;
+    opacity: 0;
+}
+
+
+
+
+@keyframes zoomDanFade {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+@keyframes slideDownFade {
+    0% {
+        opacity: 0;
+        margin-top: -20px;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+
+@keyframes FadeAja {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
