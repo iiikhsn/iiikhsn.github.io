@@ -1204,12 +1204,97 @@ nav ul a:focus-visible {
 
 /* ===== FOOTER ===== */
 footer {
-  text-align: center;
+  
   padding: 24px;
   background: #111;
   color: var(--text-dim);
   font-size: 14px;
 }
+
+.info-User {
+  display: grid;
+  grid-template-columns: 2fr 2fr ;
+  gap: 70px;
+}
+
+.info-hub {
+  margin: 0 300px;
+}
+
+.info-hub h1{
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: white;
+}
+
+.info-hub span {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 18px;
+ 
+}
+
+.info-hub p {
+  margin: 5px 0;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+
+
+/* tautan */
+.info-hub {
+ text-align: left;
+  
+}
+
+.tautan h1 {
+  /* font-weight: bold; */
+  font-size: 20px;
+  /* padding: 35px; */
+  margin-bottom: 15px;
+}
+
+.tautan ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tautan ul li {
+  text-decoration: none;
+  list-style: none;
+  margin-bottom: 10px;
+  /* margin-top: 8px; */
+}
+
+.tautan ul li a:hover{
+  color: white;
+}
+
+@media (max-width:750px) {
+  .info-hub {
+  margin: 0 70px;
+}
+
+  .info-hub span {
+     margin: 13px 0;
+  }
+}
+
+
+@media (max-width:478px) {
+  .info-hub {
+  margin: 0 20px 0;
+}
+
+  .info-hub span {
+     margin: 13px 0;
+  }
+}
+
+
+
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
