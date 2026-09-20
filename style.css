@@ -218,30 +218,6 @@ nav ul a:focus-visible {
 .image-box:hover img {
   transform: scale(1.08);
 }
-.overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  background: rgba(0, 0, 0, .55);
-  text-align: center;
-  padding-bottom: 24px;
-  opacity: 0;
-  transition: opacity .4s ease;
-}
-.overlay h2 {
-  margin: 0;
-  font-size: 20px;
-}
-.overlay span {
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--accent-soft);
-}
-.image-box:hover .overlay {
-  opacity: 1;
-}
 
 /* ===== ABOUT ===== */
 .about {
@@ -308,14 +284,6 @@ nav ul a:focus-visible {
   line-height: 1.6;
   margin: 0;
 }
-.stat-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, .4);
-}
-
-
-
-
 
 
 /* =========================================
@@ -626,7 +594,7 @@ nav ul a:focus-visible {
 }
 
 .certificate-modal.active img {
-  transform: scale(0.3s);
+  transform: scale(1);
 }
 
 
@@ -1273,8 +1241,13 @@ footer {
 }
 
 @media (max-width:750px) {
+  .info-User {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
   .info-hub {
-  margin: 0 70px;
+  margin: 0;
 }
 
   .info-hub span {
@@ -1285,7 +1258,7 @@ footer {
 
 @media (max-width:478px) {
   .info-hub {
-  margin: 0 20px 0;
+  margin: 0;
 }
 
   .info-hub span {
@@ -1665,4 +1638,15 @@ body {
     background-size: 40px 40px;
   }
 
+}
+
+@media (max-width: 750px) {
+  .certificate-modal {
+    padding: 16px;
+  }
+
+  .certificate-modal img {
+    max-width: 100%;
+    max-height: calc(100vh - 32px);
+  }
 }
