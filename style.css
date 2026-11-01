@@ -529,7 +529,7 @@ nav ul a:focus-visible {
 .certificate-item img {
   width: 100%;
   height: 240px;
-  object-fit: contain;
+  /* object-fit: contain; */
   background: rgba(255,255,255,.05);
   border-radius: 8px;
   margin-bottom: 15px;
@@ -678,6 +678,12 @@ nav ul a:focus-visible {
 .achievement-card:hover .achievement-image img {
     transform: scale(1.04);
 }
+
+  spanRight {
+    color: #22e1ff;
+    display: flex;
+    text-align: left;
+  }
 
 
 /* =========================================
@@ -1095,6 +1101,27 @@ nav ul a:focus-visible {
   .tech-item i {
     font-size: 48px;
   }
+  
+  .certificate-item img {
+  width: 100%;
+  height: 240px;
+  /* object-fit: contain; */
+  background: rgba(255,255,255,.05);
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.certificate-scroll {
+  display: flex;
+  gap: 24px;
+ 
+  max-width: 1100px;
+  margin: auto;
+  overflow-x: auto;
+  padding: 10px 5px 25px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
 
 }
 /* ===== CONTACT ===== */
