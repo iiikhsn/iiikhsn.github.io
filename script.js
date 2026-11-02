@@ -155,7 +155,7 @@ function closeAchievement() {
 }
 
 
-// Tombol View Documentation
+// Klik foto pencapaian untuk membuka galeri
 
 if (openAchievementModal) {
     openAchievementModal.addEventListener(

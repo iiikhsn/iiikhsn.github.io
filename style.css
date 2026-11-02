@@ -603,7 +603,8 @@ nav ul a:focus-visible {
 ========================================= */
 
 .achievement-card {
-    width: min(100%, 950px);
+    width: min(90%, 800px);
+    height: 500px;
     margin: 0 auto;
 
     display: grid;
@@ -627,14 +628,14 @@ nav ul a:focus-visible {
         box-shadow 0.35s ease;
 }
 
-.achievement-card:hover {
+/* .achievement-card:hover {
     transform: translateY(-6px);
 
     border-color: rgba(34, 225, 255, 0.45);
 
     box-shadow:
         0 25px 70px rgba(34, 225, 255, 0.08);
-}
+} */
 
 
 /* =========================================
@@ -643,8 +644,20 @@ nav ul a:focus-visible {
 
 .achievement-image {
     position: relative;
-    min-height: 360px;
+    display: block;
+    width: 100%;
+    min-height: 240px;
+    padding: 0;
+    border: 0;
+    background: transparent;
     overflow: hidden;
+    cursor: pointer;
+    text-align: left;
+}
+
+.achievement-image:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: -3px;
 }
 
 .achievement-image::after {
@@ -736,32 +749,6 @@ nav ul a:focus-visible {
 
 
 /* =========================================
-   ACHIEVEMENT BUTTON
-========================================= */
-
-.achievement-button {
-    width: fit-content;
-    margin: 0 auto;
-    padding: 11px 20px;
-    border: 1px solid rgba(34, 225, 255, 0.35);
-    border-radius: 10px;
-    background: rgba(34, 225, 255, 0.08);
-    color: var(--accent);
-    font-family: inherit;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.achievement-button:hover {
-    background: rgba(34, 225, 255, 0.16);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(34, 225, 255, 0.12);
-}
-
-
-/* =========================================
    ACHIEVEMENT MODAL
 ========================================= */
 
@@ -805,8 +792,7 @@ nav ul a:focus-visible {
     position: relative;
     width: min(100%, 1000px);
     max-height: 90vh;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden;
     padding: 35px;
     border: 1px solid rgba(34, 225, 255, 0.2);
     border-radius: 22px;
@@ -900,30 +886,48 @@ nav ul a:focus-visible {
 ========================================= */
 
 .achievement-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
     gap: 18px;
     align-items: center;
-    justify-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0 0 10px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) rgba(255, 255, 255, 0.08);
+    -webkit-overflow-scrolling: touch;
 }
 
 .gallery-item {
-    width: min(100%, 420px);
+    flex: 0 0 min(70vw, 420px);
     overflow: hidden;
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     background: rgba(255, 255, 255, 0.03);
-    margin: 0 auto;
+    scroll-snap-align: start;
 }
 
 .gallery-item img {
     width: 100%;
-    height: auto;
-    max-height: 500px;
+    height: min(65vh, 500px);
     display: block;
     object-fit: contain;
     margin: 0 auto;
     transition: transform 0.4s ease;
+}
+
+.achievement-gallery::-webkit-scrollbar {
+    height: 6px;
+}
+
+.achievement-gallery::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+}
+
+.achievement-gallery::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 3px;
 }
 
 .gallery-item:hover img {
@@ -951,7 +955,7 @@ nav ul a:focus-visible {
     }
 
     .achievement-info h3 {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
 
     .achievement-modal {
@@ -963,13 +967,8 @@ nav ul a:focus-visible {
         max-height: 92vh;
     }
 
-    .achievement-gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-item img {
-        height: auto;
-        max-height: 600px;
+    .gallery-item {
+        flex-basis: min(70vw, 420px);
     }
 
 }

@@ -221,6 +221,7 @@
       </div>
 
     </div>
+        <spanRight> -> Swipe Right </spanRight>
 
   </div>
 
@@ -303,9 +304,9 @@
       </div>
 
     </div>
-
+      <spanRight> -> Swipe Right </spanRight>
   </div>
-<spanRight> -> Swipe Right </spanRight>
+
 
  <!-- =========================================
      ACHIEVEMENTS
@@ -316,12 +317,17 @@
     <div class="achievement-card">
 
         <!-- Foto utama -->
-        <div class="achievement-image">
+        <button
+            type="button"
+            class="achievement-image"
+            id="openAchievementModal"
+            aria-label="Lihat semua foto dokumentasi"
+        >
             <img
                 src="assets/images/achievements/fotoTim.jpeg"
                 alt="Dokumentasi kompetisi bersama tim"
             >
-        </div>
+        </button>
 
         <!-- Informasi achievement -->
         <div class="achievement-info">
@@ -337,16 +343,8 @@
             </p>
 
             <p>
-                1st. Place lomba Website Design and Development pada acara Dies Natalis HIMTIF Universitas Pamulang tingkat UMUM .
+                1st. Place lomba Website Design and Development tingkat UMUM .
             </p>
-
-            <button
-                type="button"
-                class="achievement-button"
-                id="openAchievementModal"
-            >
-                View Documentation
-            </button>
 
         </div>
 
@@ -374,6 +372,9 @@
     class="achievement-modal"
     id="achievementModal"
     aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Achievement Documentation"
 >
 
     <div class="achievement-modal-content">
@@ -392,7 +393,7 @@
             <h3>Informatics Competition</h3>
         </div>
 
-        <div class="achievement-gallery">
+        <div class="achievement-gallery" aria-label="Foto dokumentasi">
 
             <div class="gallery-item">
                 <img
